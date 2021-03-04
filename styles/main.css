@@ -1,0 +1,4 @@
+#journalDate, #conceptsCovered, #journalEntry, #mood {
+    display: flex;
+    flex-direction: column;
+};
