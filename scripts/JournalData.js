@@ -18,7 +18,9 @@ const journal = [
     {
         id: 2,
         date: "04/04/2021",
-        concept: "Today we talked about using a function to iterate through data and then display it on the DOM."
+        concept: "Javascript",
+        entry: "Today we talked about using a function to iterate through data and then display it on the DOM.",
+        mood: "Happy"
     }
 ]
 
