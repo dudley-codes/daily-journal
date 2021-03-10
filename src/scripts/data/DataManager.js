@@ -5,7 +5,7 @@ const getJournalEntries = () => {
     .then(response => response.json())
 }
 
-console.log(getJournalEntries());
+//  
 
 export const showPostList = () => {
 	const entryLog = document.querySelector("#entryLog");
@@ -13,7 +13,7 @@ export const showPostList = () => {
 		.then((response) => {
 			const sortedByDate = response.sort(
 				(currentEntry, nextEntry) =>
-					Date.parse(nextEntry.date) - Date.parse(currentEntry.date)
+					Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
 			);
 			return sortedByDate;
 		})
@@ -21,6 +21,20 @@ export const showPostList = () => {
 			entryLog.innerHTML = EntryListComponent(allPosts);
 		});
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const WubbaLubbaDubDub = () => {
 	return fetch("https://raw.githubusercontent.com/eatsleeptravel/WubbaLubbaDubDub/main/rickQuotes.json")
