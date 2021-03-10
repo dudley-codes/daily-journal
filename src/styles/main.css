@@ -1,4 +1,4 @@
-#journalDate, #conceptsCovered, #journalEntry, #mood {
+#journalDate, #conceptsCovered, #journalEntry, #mood, #sort {
     display: flex;
     flex-direction: column;
 };
