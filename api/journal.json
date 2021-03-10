@@ -5,7 +5,7 @@
       "date": "07/24/2025",
       "concept": "HTML & CSS",
       "entry": "We talked about HTML components and how to make grrid layouts with Flexbox in CSS.",
-      "mood": "Ok"
+      "mood": "Frustrated"
     },
     {
       "id": 2,
@@ -18,21 +18,21 @@
       "date": "07/25/2025",
       "concept": "HTML & CSS",
       "entry": "We talked about HTML components and how to make grrid layouts with Flexbox in CSS.",
-      "mood": "Ok",
+      "mood": "Sad",
       "id": 3
     },
     {
       "date": "07/25/2026",
       "concept": "HTML & CSS",
       "entry": "We talked about HTML components and how to make grrid layouts with Flexbox in CSS.",
-      "mood": "Ok",
+      "mood": "Fine",
       "id": 4
     },
     {
       "date": "07/25/2019",
       "concept": "HTML & CSS",
       "entry": "We talked about HTML components and how to make grrid layouts with Flexbox in CSS.",
-      "mood": "Ok",
+      "mood": "Happy",
       "id": 5
     }
   ]
