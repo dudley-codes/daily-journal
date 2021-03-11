@@ -17,9 +17,9 @@ const getJournalEntries = () => {
 	})
 }
 
-//  
+// Shows all posts in date order starting with most recent
 
-export const showPostList = () => {
+export const showEntryList = () => {
 	const entryLog = document.querySelector("#entryLog");
 	getJournalEntries()
 		.then((response) => {
@@ -34,17 +34,19 @@ export const showPostList = () => {
 		});
 };
 
+// Converts post entry to JSON data and saves to journal.json
 
+export const createEntry = entryObj => {
+	return fetch("http://localhost:8088/entries", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(entryObj)
 
-
-
-
-
-
-
-
-
-
+	})
+		.then(response => response.json())
+}
 
 
 
