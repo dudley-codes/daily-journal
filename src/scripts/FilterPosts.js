@@ -27,7 +27,7 @@ export const filterByDate = () => {
                 postElement.innerHTML = EntryListComponent(filteredData);
     }
 };
-
+// sort data by mood
 export const filterByMood = () => {
     appElement.addEventListener("change", event => {
         if (event.target.id === "sort--mood") {
