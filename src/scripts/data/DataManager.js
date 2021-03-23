@@ -46,10 +46,23 @@ export const createEntry = entryObj => {
 
 	})
 		.then(response => response.json())
+};
+
+// Delete post fetch call=======================
+
+export const deleteEntry = entryId => {
+	return fetch(`http://localhost:8088/entries/${entryId}`, {
+		method: "DELETE",
+		headers: {
+			"Content-Type": "application/json"
+		}
+	})
+		.then(response => response.json())
+		.then(showEntryList)
 }
 
 
-
+//Rick and Morty quote randomizer ===============================================
 const WubbaLubbaDubDub = () => {
 	return fetch("https://raw.githubusercontent.com/eatsleeptravel/WubbaLubbaDubDub/main/rickQuotes.json")
 		.then(response => response.json())

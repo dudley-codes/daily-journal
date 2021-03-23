@@ -1,5 +1,5 @@
 import { resetForm } from "./feed/EntryForm.js"
-import { createEntry, showEntryList } from "./data/DataManager.js"
+import { createEntry, deleteEntry, showEntryList } from "./data/DataManager.js"
 
 export const eventListener = () => {
 
@@ -14,8 +14,12 @@ export const eventListener = () => {
             console.log("you split the edit ID", splitID);
             
         } else if (event.target.id.startsWith("delete")){
-            const splitID = event.target.id.split("--");
-            console.log("you split delete ID", splitID);
+            const splitID = event.target.id.split("--")[1];
+            console.log(splitID);
+            deleteEntry(splitID)
+            .then(response => {
+                showEntryList();
+            })
         }
         }
     )
@@ -55,4 +59,3 @@ export const formSubmit = () => {
     }
     })
 }
-
