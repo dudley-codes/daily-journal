@@ -15,11 +15,8 @@ export const eventListener = () => {
             
         } else if (event.target.id.startsWith("delete")){
             const splitID = event.target.id.split("--")[1];
-            console.log(splitID);
             deleteEntry(splitID)
-            .then(response => {
-                showEntryList();
-            })
+            .then(showEntryList)
         }
         }
     )
@@ -51,10 +48,8 @@ export const formSubmit = () => {
         }
     
     createEntry(entryObject)
-    .then(response =>
-        showEntryList())
-    .then(response =>
-        resetForm())
+    .then(showEntryList)
+    .then(resetForm)
 
     }
     })
