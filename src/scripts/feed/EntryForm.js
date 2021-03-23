@@ -31,6 +31,7 @@ const entryForm = () => {
                 <fieldset>
                     <label for="mood">Mood for the Day:</label>
                     <select name="mood" id="mood">
+                        <option value="0">Select a Mood</option>
                         <option value="Happy">Happy</option>
                         <option value="Sad">Sad</option>
                         <option value="Fine">Fine</option>
@@ -47,6 +48,7 @@ const entryForm = () => {
                     <br>
                     <label for="sort--mood">Sort by Mood:</label>
                     <select name="sort--mood" id="sort--mood">
+                        <option value="0">Select a Mood</option>
                         <option value="Happy">Happy</option>
                         <option value="Sad">Sad</option>
                         <option value="Fine">Fine</option>
@@ -71,5 +73,5 @@ export const resetForm = () => {
     document.querySelector("input[name='journalDate']").value="";
     document.querySelector("input[name='conceptsCovered']").value="";
     document.querySelector("textarea[name='journalEntry']").value="";
-    document.querySelector("#mood").value=""; //still doesn't work
+    document.querySelector("#mood").value=0;
 }
