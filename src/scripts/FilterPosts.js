@@ -1,4 +1,4 @@
-import { EntryListComponent } from "/scripts/EntryList.js";
+import { EntryListComponent } from "/scripts/feed/EntryList.js";
 import { useJournalEntries } from "/scripts/data/DataManager.js"
 
 const appElement = document.querySelector("main")
@@ -32,6 +32,7 @@ export const filterByMood = () => {
     appElement.addEventListener("change", event => {
         if (event.target.id === "sort--mood") {
             const currentMood = event.target.value
+            console.log("currentMood", currentMood)
             showFilteredPosts(currentMood)
         }
     })

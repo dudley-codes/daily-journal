@@ -1,5 +1,5 @@
-import { resetForm } from "./feed/EntryForm.js"
-import { createEntry, deleteEntry, showEntryList } from "./data/DataManager.js"
+import { resetForm, entryEdit } from "./feed/EntryForm.js"
+import { createEntry, deleteEntry, getSingleEntry, showEntryList } from "./data/DataManager.js"
 
 export const eventListener = () => {
 
@@ -10,9 +10,14 @@ export const eventListener = () => {
             console.log("You clicked 'submit'")
             
         } else if (event.target.id.startsWith("edit")){
-            const splitID = event.target.id.split("--");
-            console.log("you split the edit ID", splitID);
-            
+            const splitId = event.target.id.split("--")[1];
+            console.log("you split the edit ID", splitId);
+            // todo: call single entry function and pass through split ID "entryID"
+            getSingleEntry(splitId)
+            // todo: .then response passed through "entryEdit" function
+            .then(response => { 
+              entryEdit(response)
+            })
         } else if (event.target.id.startsWith("delete")){
             const splitID = event.target.id.split("--")[1];
             deleteEntry(splitID)

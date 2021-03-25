@@ -22,11 +22,32 @@
       "id": 3
     },
     {
-      "date": "",
+      "date": "2014-12-29",
+      "concept": "asdf",
+      "entry": "asdfsdf",
+      "mood": "Confused",
+      "id": 4
+    },
+    {
+      "date": "1984-11-27",
+      "concept": "",
+      "entry": "",
+      "mood": "0",
+      "id": 5
+    },
+    {
+      "date": "1984-11-27",
       "concept": "",
       "entry": "",
       "mood": "Happy",
-      "id": 4
+      "id": 6
+    },
+    {
+      "date": "1984-11-27",
+      "concept": "HTML & CSS",
+      "entry": "We talked about HTML components and how to make grrid layouts with Flexbox in CSS.",
+      "mood": "1",
+      "id": 7
     }
   ]
 }
