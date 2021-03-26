@@ -19,7 +19,7 @@ export const filterByDate = () => {
         const epoch = Date.parse(`01/01/${year}`);
         console.log("The robot date is", epoch);
         const filteredData = useJournalEntries().filter(singlePost => {
-            if (Date.parse(singlePost.date) >= epoch) {
+            if (singlePost.date >= epoch) {
                 return singlePost
             }
             })

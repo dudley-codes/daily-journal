@@ -2,52 +2,59 @@
   "entries": [
     {
       "id": 1,
-      "date": "07/24/2025",
+      "date": 1614729600000,
       "concept": "HTML & CSS",
       "entry": "We talked about HTML components and how to make grrid layouts with Flexbox in CSS.",
       "mood": "Frustrated"
     },
     {
       "id": 2,
-      "date": "04/04/2021",
+      "date": 1614729600000,
       "concept": "Javascript",
       "entry": "Today we talked about using a function to iterate through data and then display it on the DOM.",
       "mood": "Happy"
     },
     {
-      "date": "07/25/2025",
-      "concept": "HTML & CSS",
-      "entry": "We talked about HTML components and how to make grrid layouts with Flexbox in CSS.",
-      "mood": "Sad",
-      "id": 3
-    },
-    {
-      "date": "2014-12-29",
+      "date": 1614729600000,
       "concept": "asdf",
       "entry": "asdfsdf",
-      "mood": "Confused",
-      "id": 4
-    },
-    {
-      "date": "1984-11-27",
-      "concept": "",
-      "entry": "",
       "mood": "0",
-      "id": 5
-    },
-    {
-      "date": "1984-11-27",
-      "concept": "",
-      "entry": "",
-      "mood": "Happy",
-      "id": 6
-    },
-    {
-      "date": "1984-11-27",
-      "concept": "HTML & CSS",
-      "entry": "We talked about HTML components and how to make grrid layouts with Flexbox in CSS.",
-      "mood": "1",
       "id": 7
+    },
+    {
+      "date": 1616544000000,
+      "concept": "sdfasd",
+      "entry": "asdfasdf",
+      "mood": "Fine",
+      "id": 11
+    },
+    {
+      "date": 1514764800000,
+      "concept": "January",
+      "entry": "Jan 2018",
+      "mood": "Happy",
+      "id": 12
+    },
+    {
+      "date": 1616457600000,
+      "concept": "Human Date",
+      "entry": "Stuff",
+      "mood": "Happy",
+      "id": 13
+    },
+    {
+      "date": 1517961600000,
+      "concept": "Feb",
+      "entry": "Feb",
+      "mood": "Happy",
+      "id": 14
+    },
+    {
+      "date": 1561507200000,
+      "concept": "Test",
+      "entry": "Test",
+      "mood": "Happy",
+      "id": 15
     }
   ]
 }

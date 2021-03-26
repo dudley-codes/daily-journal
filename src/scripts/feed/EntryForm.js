@@ -2,14 +2,13 @@ import { filterFeed } from "./FilterEntries.js";
 
 let concept = "";
 let entry = "";
-let date = "1984-11-27";
-let mood = "";
+let editDate = "";
 
 const entryForm = () => {
     return `<form action="">
                 <fieldset>
                     <label for="journalDate">Date of Entry:</label>
-                    <input type="date" name="journalDate" id="journalDate" value="${date}">
+                    <input type="date" name="journalDate" id="journalDate" value="${editDate}">
                 </fieldset>
             </form>
             <form action="">
@@ -70,13 +69,16 @@ export const resetForm = () => {
     document.querySelector("#mood").value=0;
 }
 
-let currentMood = 0
+let editMood = 0
 let moodIndex = 0
 //export function that accepts input and determines edit data to display on the DOM
 export const entryEdit = (entryObject) => {
+  let humanDate = new Date(entryObject.date).toISOString()
   concept = entryObject.concept
   entry = entryObject.entry
-  currentMood = entryObject.mood
+  editMood = entryObject.mood
+  editDate = humanDate.slice(0,10)
+  console.log("editDate is", editDate)
 
   return showForm(), moodEdit()
 }
@@ -84,7 +86,7 @@ export const entryEdit = (entryObject) => {
 // Switch statement that checks mood on selected entry to edit 
 // and sets the Index value of the selected dropdown item.
 const moodEdit = () => {
-  switch(currentMood){
+  switch(editMood){
     case "Happy":
       moodIndex = 1
       break;

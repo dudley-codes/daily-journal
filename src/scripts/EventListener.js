@@ -40,13 +40,14 @@ export const formSubmit = () => {
     document.addEventListener("click", event => {
     if (event.target.id === "submit__form"){
         event.preventDefault();
-        const inputDate = document.querySelector("input[name='journalDate']").value;
+        const dateValue = Date.parse((document.querySelector("input[name='journalDate']").value));
+        // const inputDate = dateValue.slice(0, 15)
         const inputConcept = document.querySelector("input[name='conceptsCovered']").value;
         const inputEntry = document.querySelector("textarea[name='journalEntry']").value;
         const inputMood = document.querySelector("#mood").value;
     
         const entryObject = {
-            date: inputDate,
+            date: dateValue,
             concept: inputConcept,
             entry: inputEntry,
             mood: inputMood
