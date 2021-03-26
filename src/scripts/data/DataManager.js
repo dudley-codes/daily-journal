@@ -1,4 +1,4 @@
-import { EntryListComponent } from "/scripts/EntryList.js";
+import { EntryListComponent } from "/scripts/feed/EntryList.js";
 
 let journalEntries = [];
 
@@ -15,6 +15,12 @@ const getJournalEntries = () => {
 		return parsedResponse;
 
 	})
+}
+
+// Fetch call for single Entry
+export const getSingleEntry = (entryId) => {
+  return fetch(`http://localhost:8088/entries/${entryId}`)
+    .then(response => response.json())
 }
 
 // Shows all posts in date order starting with most recent

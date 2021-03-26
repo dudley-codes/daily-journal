@@ -1,16 +1,20 @@
+import { filterFeed } from "./FilterEntries.js";
+
+let concept = "";
+let entry = "";
+let editDate = "";
+
 const entryForm = () => {
-    return `
-            <h2>Daily Journal</h2>
-            <form action="">
+    return `<form action="">
                 <fieldset>
                     <label for="journalDate">Date of Entry:</label>
-                    <input type="date" name="journalDate" id="journalDate">
+                    <input type="date" name="journalDate" id="journalDate" value="${editDate}">
                 </fieldset>
             </form>
             <form action="">
                 <fieldset>
                     <label for="conceptsCovered">Concepts Covered:</label>
-                    <input value=""
+                    <input value="${concept}"
                             type="text" 
                             name="conceptsCovered" 
                             id="conceptsCovered"
@@ -24,41 +28,32 @@ const entryForm = () => {
                         id="journalEntry" 
                         name="journalEntry" 
                         rows="4" cols="50"
-                        placeholder="Write stuff here..."></textarea>
+                        placeholder="Write stuff here...">${entry}</textarea>
                 </fieldset>
             </form>
-            <form action="">
-                <fieldset>
-                    <label for="mood">Mood for the Day:</label>
-                    <select name="mood" id="mood">
-                        <option value="Happy">Happy</option>
-                        <option value="Sad">Sad</option>
-                        <option value="Fine">Fine</option>
-                        <option value="Frustrated">Frustrated</option>
-                        <option value="Confused">Confused</option>
-                    </select>
-                    <label for="sort--date">Sort by Date:</label>
-                    <select name="sort--date" id="sort--date">
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                        <option value="2018">2018</option>
-                    </select>
-                    <br>
-                    <label for="sort--mood">Sort by Mood:</label>
-                    <select name="sort--mood" id="sort--mood">
-                        <option value="Happy">Happy</option>
-                        <option value="Sad">Sad</option>
-                        <option value="Fine">Fine</option>
-                        <option value="Frustrated">Frustrated</option>
-                        <option value="Confused">Confused</option>
-                    </select>
-                </fieldset>
-            </form>
+            ${moodSelect()}
             <form action="">
             <button id="submit__form">Submit</button>
             <button id="clear__form">Clear</button>
+            ${filterFeed()}
         </form>
+    </form>`
+}
+
+const moodSelect = () => {
+  return `            
+    <form action="">
+    <fieldset>
+        <label for="mood">Mood for the Day:</label>
+        <select name="mood" id="mood">
+            <option value="0">Select a Mood</option>
+            <option value="Happy">Happy</option>
+            <option value="Sad">Sad</option>
+            <option value="Fine">Fine</option>
+            <option value="Frustrated">Frustrated</option>
+            <option value="Confused">Confused</option>
+        </select>
+    </fieldset>
     </form>`
 }
 
@@ -71,5 +66,46 @@ export const resetForm = () => {
     document.querySelector("input[name='journalDate']").value="";
     document.querySelector("input[name='conceptsCovered']").value="";
     document.querySelector("textarea[name='journalEntry']").value="";
-    document.querySelector("#mood").value=""; //still doesn't work
+    document.querySelector("#mood").value=0;
 }
+
+let editMood = 0
+let moodIndex = 0
+//export function that accepts input and determines edit data to display on the DOM
+export const entryEdit = (entryObject) => {
+  let humanDate = new Date(entryObject.date).toISOString()
+  concept = entryObject.concept
+  entry = entryObject.entry
+  editMood = entryObject.mood
+  editDate = humanDate.slice(0,10)
+  console.log("editDate is", editDate)
+
+  return showForm(), moodEdit()
+}
+
+// Switch statement that checks mood on selected entry to edit 
+// and sets the Index value of the selected dropdown item.
+const moodEdit = () => {
+  switch(editMood){
+    case "Happy":
+      moodIndex = 1
+      break;
+    case "Sad":
+      moodIndex = 2
+      break;
+    case "Fine":
+      moodIndex = 3
+      break;
+    case "Frustrated":
+      moodIndex = 4
+      break;
+    case "Confused":
+      moodIndex = 5
+      break;
+    default: moodIndex = 0
+  }
+  const moodElement = document.getElementById("mood")
+  moodElement.options[moodIndex].selected = true; 
+  return moodSelect()
+}
+
